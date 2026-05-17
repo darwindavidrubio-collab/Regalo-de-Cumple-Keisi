@@ -197,6 +197,21 @@ body {
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.jar-float,
+.jar-3d,
+.jar-lid,
+.jar-neck,
+.jar-glass,
+.jar-contents,
+.jar-heart,
+.jar-star,
+.jar-shadow,
+.jar-pedestal,
+.jar-label-card {
+  pointer-events: none;
 }
 
 .jar-wrapper:hover:not(.jar-wrapper--disabled) .jar-float {

@@ -8,7 +8,8 @@ const state = {
   ultimaNotaId: null,
   isShaking: false,
   modalAbierto: false,
-  notaActual: null
+  notaActual: null,
+  lastInteractionAt: 0
 };
 
 const jarWrapper = document.getElementById('jarWrapper');
@@ -86,13 +87,9 @@ function onJarInteraction() {
   state.isShaking = true;
   setJarDisabled(true);
   jarWrapper.classList.add('jar-wrapper--shake');
-
-  let shakeEnded = false;
-  const onShakeEnd = () => {
-    if (shakeEnded) return;
-    shakeEnded = true;
+  window.clearTimeout(onJarInteraction.timeoutId);
+  onJarInteraction.timeoutId = window.setTimeout(() => {
     jarWrapper.classList.remove('jar-wrapper--shake');
-    jarWrapper.removeEventListener('animationend', onShakeEnd);
     state.isShaking = false;
 
     const nota = elegirNotaAleatoria(state.categoriaActiva, state.ultimaNotaId);
@@ -101,10 +98,14 @@ function onJarInteraction() {
     } else {
       setJarDisabled(false);
     }
-  };
+  }, 450);
+}
 
-  jarWrapper.addEventListener('animationend', onShakeEnd);
-  setTimeout(onShakeEnd, 450);
+function triggerJarInteraction() {
+  const now = Date.now();
+  if (now - state.lastInteractionAt < 350) return;
+  state.lastInteractionAt = now;
+  onJarInteraction();
 }
 
 function setCategoriaActiva(categoria) {
@@ -189,14 +190,22 @@ initCorazones();
 setCategoriaActiva(state.categoriaActiva);
 
 jarWrapper.addEventListener('click', (e) => {
+  e.preventDefault();
   e.stopPropagation();
-  onJarInteraction();
+  triggerJarInteraction();
+});
+
+jarWrapper.addEventListener('pointerup', (e) => {
+  if (e.pointerType === 'mouse') return;
+  e.preventDefault();
+  e.stopPropagation();
+  triggerJarInteraction();
 });
 
 jarWrapper.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
-    onJarInteraction();
+    triggerJarInteraction();
   }
 });
 
