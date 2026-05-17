@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Un frasco digital lleno de notas, poemas y cariño para Enana.">
+  <meta name="theme-color" content="#f6d6df">
+  <meta property="og:title" content="El Frasco de Notas · Para Enana">
+  <meta property="og:description" content="Toca el frasco y descubre una nota especial para tu día.">
+  <meta property="og:type" content="website">
+  <title>El Frasco de Notas · Para Enana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-layer__gradient"></div>
+    <div class="bg-layer__glow bg-layer__glow--left"></div>
+    <div class="bg-layer__glow bg-layer__glow--right"></div>
+    <div class="confetti-field" id="confettiField"></div>
+  </div>
+
+  <div class="app">
+    <header class="top-bar">
+      <button type="button" class="top-bar__btn" aria-label="Inicio">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-9.5z"/>
+        </svg>
+      </button>
+      <button type="button" class="top-bar__btn" aria-label="Menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </header>
+
+    <section class="hero">
+      <p class="hero__eyebrow">Un rincón guardado para ti</p>
+      <h1 class="hero__title">Toca para descubrir una nota especial en tu día <span aria-hidden="true">✨</span></h1>
+      <p class="hero__copy">Cada papelito guarda una razón, un recuerdo o una palabra que quería encontrarte cuando más la necesitaras.</p>
+    </section>
+
+    <main class="main">
+      <section class="jar-section" aria-label="Frasco de notas">
+        <div class="jar-scene">
+          <div class="jar-wrapper" id="jarWrapper" role="button" tabindex="0" aria-label="Sacudir el frasco para sacar una nota">
+            <div class="jar-shadow" aria-hidden="true"></div>
+            <div class="jar-pedestal" aria-hidden="true"></div>
+
+            <div class="jar-float">
+              <div class="jar-3d">
+                <div class="jar-lid" aria-hidden="true">
+                  <div class="jar-lid__top-glow"></div>
+                  <div class="jar-lid__cap"></div>
+                  <div class="jar-lid__thread"></div>
+                  <div class="jar-lid__rim"></div>
+                </div>
+
+                <div class="jar-neck" aria-hidden="true">
+                  <div class="jar-neck__glass"></div>
+                  <div class="jar-twine"></div>
+                  <div class="jar-charm">
+                    <span class="jar-charm__ring"></span>
+                    <span class="jar-charm__heart"></span>
+                  </div>
+                </div>
+
+                <div class="jar-glass">
+                  <div class="jar-glass__edge jar-glass__edge--left"></div>
+                  <div class="jar-glass__edge jar-glass__edge--right"></div>
+                  <div class="jar-glass__edge jar-glass__edge--base"></div>
+                  <div class="jar-glass__halo"></div>
+                  <div class="jar-glass__refraction"></div>
+                  <div class="jar-glass__shine jar-glass__shine--main"></div>
+                  <div class="jar-glass__shine jar-glass__shine--secondary"></div>
+                  <div class="jar-glass__shine jar-glass__shine--rim"></div>
+                  <div class="jar-glass__floor"></div>
+
+                  <div class="jar-contents" aria-hidden="true">
+                    <div class="jar-paper jar-paper--1"></div>
+                    <div class="jar-paper jar-paper--2"></div>
+                    <div class="jar-paper jar-paper--3"></div>
+                    <div class="jar-paper jar-paper--4"></div>
+                    <div class="jar-paper jar-paper--5"></div>
+                    <div class="jar-paper jar-paper--6"></div>
+                    <div class="jar-paper jar-paper--7"></div>
+                    <span class="jar-float-icon jar-float-icon--1">✉</span>
+                    <span class="jar-float-icon jar-float-icon--2">★</span>
+                    <span class="jar-float-icon jar-float-icon--3">♡</span>
+                    <span class="jar-float-icon jar-float-icon--4">✦</span>
+                  </div>
+
+                  <div class="jar-label-card" aria-hidden="true">
+                    <div class="jar-label-card__frame"></div>
+                    <p class="jar-label-card__title">EL FRASCO DE<br><strong>ENANA</strong> <span class="jar-label-card__heart">❤</span></p>
+                    <p class="jar-label-card__sub">Abierto para ti siempre,<br>mi cielo bonito.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="jar-category-hint" id="jarLabel"><span class="jar-category-hint__dot"></span> 🌸 Una Razón</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="category-nav" aria-label="Categorías de notas">
+    <div class="category-nav__grid">
+      <button type="button" class="category-btn" data-categoria="una-razon" aria-pressed="true">
+        <span class="category-btn__emoji" aria-hidden="true">🌸</span>
+        <span class="category-btn__text">Una Razón</span>
+      </button>
+      <button type="button" class="category-btn" data-categoria="un-recuerdo" aria-pressed="false">
+        <span class="category-btn__emoji" aria-hidden="true">💬</span>
+        <span class="category-btn__text">Un Recuerdo</span>
+      </button>
+      <button type="button" class="category-btn category-btn--wide" data-categoria="lo-que-queria-decirte" aria-pressed="false">
+        <span class="category-btn__emoji" aria-hidden="true">🥹</span>
+        <span class="category-btn__text">Lo que quería decirte...</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="modal" id="noteModal" role="dialog" aria-modal="true" aria-labelledby="modalChip" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <article class="modal__card" id="modalCard">
+      <span class="modal__chip" id="modalChip">Una Razón</span>
+      <p class="modal__text" id="modalText"></p>
+      <button type="button" class="modal__btn" id="modalCloseBtn">Guardar nota</button>
+    </article>
+  </div>
+
+  <script src="js/notas.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
