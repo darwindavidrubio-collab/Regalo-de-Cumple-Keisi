@@ -1,11 +1,10 @@
-﻿const CATEGORIA_LABELS = {
-  'una-razon': '🌸 Una Razón',
-  'un-recuerdo': '💬 Un Recuerdo',
-  'lo-que-queria-decirte': '🥹 Lo que quería decirte...'
+const CATEGORIA_LABELS = {
+  'lo-bonito-de-ti': '✨ Lo Bonito de Ti',
+  'palabras-para-ti': '💗 Palabras para Ti'
 };
 
 const state = {
-  categoriaActiva: 'una-razon',
+  categoriaActiva: 'lo-bonito-de-ti',
   ultimaNotaId: null,
   isShaking: false,
   modalAbierto: false,
@@ -145,7 +144,48 @@ function initConfetti() {
   }
 }
 
+function initCorazones() {
+  const container = document.getElementById('jarContents');
+  if (!container) return;
+  
+  container.innerHTML = '';
+  
+  // Usamos un poco menos de densidad para que no se amontonen fuera de los límites
+  const filas = 13; 
+  const columnas = 10;
+  
+  for (let r = 0; r < filas; r++) {
+    for (let c = 0; c < columnas; c++) {
+      const heart = document.createElement('span');
+      heart.className = 'jar-heart';
+      heart.textContent = '💖';
+      
+      // Restringimos las posiciones estrictamente entre 2% y 88% 
+      // para que NINGÚN corazón toque el borde del cristal y se vea "cortado"
+      let topBase = 2 + (r / (filas - 1)) * 86;
+      let leftBase = 4 + (c / (columnas - 1)) * 82;
+      
+      // Pequeño desorden aleatorio, pero contenido
+      const top = topBase + (Math.random() * 4 - 2);
+      const left = leftBase + (Math.random() * 4 - 2);
+      
+      const rotate = (Math.random() * 60) - 30;
+      const delay = Math.random() * 4;
+      const zIndex = Math.floor(Math.random() * 20);
+      
+      heart.style.left = `${left}%`;
+      heart.style.top = `${top}%`;
+      heart.style.setProperty('--r', `${rotate}deg`);
+      heart.style.animationDelay = `${delay}s`;
+      heart.style.zIndex = zIndex;
+      
+      container.appendChild(heart);
+    }
+  }
+}
+
 initConfetti();
+initCorazones();
 setCategoriaActiva(state.categoriaActiva);
 
 jarWrapper.addEventListener('click', (e) => {

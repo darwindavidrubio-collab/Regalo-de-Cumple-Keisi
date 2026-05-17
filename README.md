@@ -42,9 +42,8 @@ Todas las frases están en [js/notas.js](/C:/Users/USUARIO/Desktop/Regalo%20keis
 
 Las categorías son:
 
-- `una-razon`
-- `un-recuerdo`
-- `lo-que-queria-decirte`
+- `lo-bonito-de-ti`
+- `palabras-para-ti`
 
 ## Publicarlo en Vercel
 

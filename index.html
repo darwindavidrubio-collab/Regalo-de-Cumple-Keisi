@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Un frasco digital lleno de notas, poemas y cariño para Enana.">
+  <meta name="description" content="Un frasco digital lleno de notas bonitas y detalles suaves para isi.">
   <meta name="theme-color" content="#f6d6df">
-  <meta property="og:title" content="El Frasco de Notas · Para Enana">
+  <meta property="og:title" content="El Frasco de Notas · Para isi">
   <meta property="og:description" content="Toca el frasco y descubre una nota especial para tu día.">
   <meta property="og:type" content="website">
-  <title>El Frasco de Notas · Para Enana</title>
+  <title>El Frasco de Notas · Para isi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
     <section class="hero">
       <p class="hero__eyebrow">Un rincón guardado para ti</p>
       <h1 class="hero__title">Toca para descubrir una nota especial en tu día <span aria-hidden="true">✨</span></h1>
-      <p class="hero__copy">Cada papelito guarda una razón, un recuerdo o una palabra que quería encontrarte cuando más la necesitaras.</p>
+      <p class="hero__copy">Cada papelito guarda algo bonito sobre ti o una palabra suave que quería dejarte cerquita del corazón.</p>
     </section>
 
     <main class="main">
@@ -78,23 +78,12 @@
                   <div class="jar-glass__shine jar-glass__shine--rim"></div>
                   <div class="jar-glass__floor"></div>
 
-                  <div class="jar-contents" aria-hidden="true">
-                    <div class="jar-paper jar-paper--1"></div>
-                    <div class="jar-paper jar-paper--2"></div>
-                    <div class="jar-paper jar-paper--3"></div>
-                    <div class="jar-paper jar-paper--4"></div>
-                    <div class="jar-paper jar-paper--5"></div>
-                    <div class="jar-paper jar-paper--6"></div>
-                    <div class="jar-paper jar-paper--7"></div>
-                    <span class="jar-float-icon jar-float-icon--1">✉</span>
-                    <span class="jar-float-icon jar-float-icon--2">★</span>
-                    <span class="jar-float-icon jar-float-icon--3">♡</span>
-                    <span class="jar-float-icon jar-float-icon--4">✦</span>
+                  <div class="jar-contents" id="jarContents" aria-hidden="true">
                   </div>
 
                   <div class="jar-label-card" aria-hidden="true">
                     <div class="jar-label-card__frame"></div>
-                    <p class="jar-label-card__title">EL FRASCO DE<br><strong>ENANA</strong> <span class="jar-label-card__heart">❤</span></p>
+                    <p class="jar-label-card__title">EL FRASCO DE<br><strong>isi</strong> <span class="jar-label-card__heart">❤</span></p>
                     <p class="jar-label-card__sub">Abierto para ti siempre,<br>mi cielo bonito.</p>
                   </div>
                 </div>
@@ -102,7 +91,7 @@
             </div>
           </div>
 
-          <p class="jar-category-hint" id="jarLabel"><span class="jar-category-hint__dot"></span> 🌸 Una Razón</p>
+          <p class="jar-category-hint" id="jarLabel"><span class="jar-category-hint__dot"></span> ✨ Lo Bonito de Ti</p>
         </div>
       </section>
     </main>
@@ -110,17 +99,13 @@
 
   <nav class="category-nav" aria-label="Categorías de notas">
     <div class="category-nav__grid">
-      <button type="button" class="category-btn" data-categoria="una-razon" aria-pressed="true">
-        <span class="category-btn__emoji" aria-hidden="true">🌸</span>
-        <span class="category-btn__text">Una Razón</span>
+      <button type="button" class="category-btn" data-categoria="lo-bonito-de-ti" aria-pressed="true">
+        <span class="category-btn__emoji" aria-hidden="true">✨</span>
+        <span class="category-btn__text">Lo Bonito de Ti</span>
       </button>
-      <button type="button" class="category-btn" data-categoria="un-recuerdo" aria-pressed="false">
-        <span class="category-btn__emoji" aria-hidden="true">💬</span>
-        <span class="category-btn__text">Un Recuerdo</span>
-      </button>
-      <button type="button" class="category-btn category-btn--wide" data-categoria="lo-que-queria-decirte" aria-pressed="false">
-        <span class="category-btn__emoji" aria-hidden="true">🥹</span>
-        <span class="category-btn__text">Lo que quería decirte...</span>
+      <button type="button" class="category-btn" data-categoria="palabras-para-ti" aria-pressed="false">
+        <span class="category-btn__emoji" aria-hidden="true">💗</span>
+        <span class="category-btn__text">Palabras para Ti</span>
       </button>
     </div>
   </nav>
